@@ -8,7 +8,7 @@ This repository contains only front-end files. Click [here](https://github.com/A
 - Disk usage in real time
 - RAM usage in real time
 
-## Setup the panel (Localhost)
+## Setup Alter (Localhost)
 
 Go to [AlterProject/Localhost](https://github.com/AlterProject/Localhost) and download it from GIT/Desktop or from ZIPPED file. 
 

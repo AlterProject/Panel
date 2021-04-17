@@ -1,8 +1,15 @@
+// Header
+let configs = {
+  nodeAddress: "127.0.0.1",
+  nodePort: 5500,
+};
+
+// Body
 $(document).ready(function () {
   setInterval(() => {
     $.ajax({
       type: "get",
-      url: "http://127.0.0.1:5500/cpu",
+      url: `http://${configs.nodeAddress}:${configs.nodePort}/cpu`,
       success: function (response) {
         // console.log(response);
         $("#cpuBar").css("width", response.toString());
@@ -14,7 +21,7 @@ $(document).ready(function () {
   setInterval(() => {
     $.ajax({
       type: "get",
-      url: "http://127.0.0.1:5500/mem",
+      url: `http://${configs.nodeAddress}:${configs.nodePort}/mem`,
       success: function (response) {
         // console.log(response);
         $("#memBar").css("width", response.toString());
@@ -26,7 +33,7 @@ $(document).ready(function () {
   setInterval(() => {
     $.ajax({
       type: "get",
-      url: "http://127.0.0.1:5500/disk",
+      url: `http://${configs.nodeAddress}:${configs.nodePort}/disk`,
       success: function (response) {
         // console.log(response);
         $("#diskBar").css("width", response.toString());
@@ -38,11 +45,45 @@ $(document).ready(function () {
   $("#send").click((ev) => {
     $.ajax({
       type: "post",
-      url: "http://127.0.0.1:5500/cmd",
+      url: `http://${configs.nodeAddress}:${configs.nodePort}/cmd`,
       data: { value: $("#cmd").val() },
       dataType: "text",
       success: function (response) {
         $("#console").html(response.replace("\n", "<br>"));
+      },
+    });
+  });
+
+  $.ajax({
+    type: "post",
+    url: `http://${configs.nodeAddress}:${configs.nodePort}/cmd`,
+    data: { value: "node --help" },
+    dataType: "text",
+    success: function (response) {
+      $("#console").html(response);
+    },
+  });
+
+  $("#start").click((ev) => {
+    $.ajax({
+      type: "post",
+      url: `http://${configs.nodeAddress}:${configs.nodePort}/cmd`,
+      data: { value: "YOUR START COMMAND HERE" },
+      dataType: "text",
+      success: function (response) {
+        $("#console").html(response);
+      },
+    });
+  });
+
+  $("#stop").click((ev) => {
+    $.ajax({
+      type: "post",
+      url: `http://${configs.nodeAddress}:${configs.nodePort}/cmd`,
+      data: { value: "YOUR STOP COMMAND HERE" },
+      dataType: "text",
+      success: function (response) {
+        $("#console").html(response);
       },
     });
   });

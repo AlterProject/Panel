@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alter - Connexion</title>
+    <title>Alter - Accueil</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="shortcut icon" href="assets/favicon.svg" type="image/svg" />
 
@@ -33,10 +33,13 @@
     </div>
 
     <div class="main">
+      <div class="notif warning tooSmallScreen">
+        Navigation is disabled under 768px of screen width.
+      </div>
+
       <div class="row shadow">
-        <div class="col danger">This is a danger!</div>
-        <div class="col warning">This is a warning!</div>
-        <div class="col success">This is a success!</div>
+        <button class="col success" id="start">Start server</button>
+        <button class="col danger" id="stop">Stop server</button>
       </div>
 
       <div class="row">
@@ -72,15 +75,6 @@
         <div class="col is-3 black">
           <div class="console">
             <div class="console-output" id="console"></div>
-            <div class="wrapper">
-              <input
-                type="text"
-                class="console-input"
-                placeholder="Batch command"
-                id="cmd"
-              />
-              <input id="send" class="console-send" type="submit" />
-            </div>
           </div>
         </div>
       </div>

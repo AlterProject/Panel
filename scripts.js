@@ -42,18 +42,6 @@ $(document).ready(function () {
     });
   }, 1000);
 
-  $("#send").click((ev) => {
-    $.ajax({
-      type: "post",
-      url: `http://${configs.nodeAddress}:${configs.nodePort}/cmd`,
-      data: { value: $("#cmd").val() },
-      dataType: "text",
-      success: function (response) {
-        $("#console").html(response.replace("\n", "<br>"));
-      },
-    });
-  });
-
   $.ajax({
     type: "post",
     url: `http://${configs.nodeAddress}:${configs.nodePort}/cmd`,
@@ -67,9 +55,7 @@ $(document).ready(function () {
   $("#start").click((ev) => {
     $.ajax({
       type: "post",
-      url: `http://${configs.nodeAddress}:${configs.nodePort}/cmd`,
-      data: { value: "YOUR START COMMAND HERE" },
-      dataType: "text",
+      url: `http://${configs.nodeAddress}:${configs.nodePort}/start`,
       success: function (response) {
         $("#console").html(response);
       },
@@ -79,9 +65,7 @@ $(document).ready(function () {
   $("#stop").click((ev) => {
     $.ajax({
       type: "post",
-      url: `http://${configs.nodeAddress}:${configs.nodePort}/cmd`,
-      data: { value: "YOUR STOP COMMAND HERE" },
-      dataType: "text",
+      url: `http://${configs.nodeAddress}:${configs.nodePort}/stop`,
       success: function (response) {
         $("#console").html(response);
       },

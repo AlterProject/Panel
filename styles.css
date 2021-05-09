@@ -47,6 +47,23 @@
   padding-bottom: 7%;
 }
 
+button {
+  border: none;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#start,
+#stop {
+  background: none;
+}
+
+button > img {
+  width: 2em;
+}
+
 .sidebar > .brand > sup {
   font-size: 0.7em;
   text-transform: uppercase;

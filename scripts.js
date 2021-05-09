@@ -42,16 +42,6 @@ $(document).ready(function () {
     });
   }, 1000);
 
-  $.ajax({
-    type: "post",
-    url: `http://${configs.nodeAddress}:${configs.nodePort}/cmd`,
-    data: { value: "node --help" },
-    dataType: "text",
-    success: function (response) {
-      $("#console").html(response);
-    },
-  });
-
   $("#start").click((ev) => {
     $.ajax({
       type: "post",

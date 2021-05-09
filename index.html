@@ -37,11 +37,6 @@
         Navigation is disabled under 768px of screen width.
       </div>
 
-      <div class="row shadow">
-        <button class="col success" id="start">Start server</button>
-        <button class="col danger" id="stop">Stop server</button>
-      </div>
-
       <div class="row">
         <div class="col">
           <header class="heading">
@@ -52,7 +47,7 @@
             <div class="progressbar" id="cpuBar"></div>
           </div>
 
-          <hr />
+          <br />
 
           <header class="heading">
             mémoire
@@ -62,7 +57,7 @@
             <div class="progressbar" id="memBar"></div>
           </div>
 
-          <hr />
+          <br />
 
           <header class="heading">
             stockage
@@ -70,6 +65,17 @@
           </header>
           <div class="shadow progressbar-container dark">
             <div class="progressbar" id="diskBar"></div>
+          </div>
+
+          <br />
+
+          <div class="row">
+            <button class="col" id="start">
+              <img src="./assets/036-play button.png" />
+            </button>
+            <button class="col" id="stop">
+              <img src="./assets/037-stop.png" />
+            </button>
           </div>
         </div>
         <div class="col is-3 black">
